@@ -35,10 +35,10 @@ export function VolumeControl({ volume, onVolumeChange }) {
       <button
         type="button"
         onClick={toggleMute}
-        className="p-1.5 text-gray-400 hover:text-gray-100 rounded-full transition-colors"
-        title={isMuted ? 'Batal bisu' : 'Bisu'}
+        className="p-1.5 text-zinc-400 hover:text-zinc-100 rounded-full transition-colors"
+        title={isMuted ? 'Unmute' : 'Mute'}
       >
-        {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4" />}
+        {isMuted ? <VolumeX className="w-4 h-4 text-rose-400" /> : <Volume2 className="w-4 h-4" />}
       </button>
       <input
         type="range"
@@ -47,7 +47,10 @@ export function VolumeControl({ volume, onVolumeChange }) {
         step="0.01"
         value={sliderPosition}
         onChange={handleSliderChange}
-        className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+        className="w-full h-1.5 bg-white/15 rounded-lg appearance-none cursor-pointer accent-white"
+        style={{
+          background: `linear-gradient(to right, rgba(255,255,255,0.9) ${sliderPosition * 100}%, rgba(255,255,255,0.12) ${sliderPosition * 100}%)`,
+        }}
       />
     </div>
   );

@@ -12,7 +12,7 @@ export function ProgressSeek({ currentTime, duration, onSeek }) {
 
   return (
     <div className="flex items-center gap-3 w-full">
-      <span className="text-xs text-gray-400 font-mono w-10 text-right select-none">
+      <span className="text-xs text-zinc-400 font-mono w-10 text-right select-none">
         {formatTime(currentTime)}
       </span>
       <div className="relative flex-1 flex items-center group">
@@ -24,13 +24,13 @@ export function ProgressSeek({ currentTime, duration, onSeek }) {
           value={currentTime || 0}
           onChange={handleChange}
           disabled={!duration || duration <= 0}
-          className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-indigo-500 hover:h-2 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          className="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-white hover:h-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
           style={{
-            background: `linear-gradient(to right, #6366f1 ${percentage}%, #1f2937 ${percentage}%)`,
+            background: `linear-gradient(to right, rgba(255,255,255,0.9) ${percentage}%, rgba(255,255,255,0.12) ${percentage}%)`,
           }}
         />
       </div>
-      <span className="text-xs text-gray-400 font-mono w-10 text-left select-none">
+      <span className="text-xs text-zinc-400 font-mono w-10 text-left select-none">
         {formatTime(duration)}
       </span>
     </div>
